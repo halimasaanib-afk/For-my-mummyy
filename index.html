@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Mommy 💖</title>
+<title>For my Mummy 💖</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family:'Poppins',sans-serif;
   overflow:hidden;
-  background:linear-gradient(45deg,#ff9ad5,#ffd166,#9bf6ff,#caffbf);
+  background:linear-gradient(45deg,#ffafcc,#ffc8dd,#cdb4db,#a2d2ff);
   background-size:400% 400%;
   animation:bg 10s ease infinite;
 }
@@ -32,12 +35,16 @@ body{
 .show{display:flex}
 
 .card{
-  background:rgba(255,255,255,.8);
+  background:rgba(255,255,255,.85);
   padding:25px;
   border-radius:25px;
   box-shadow:0 10px 30px rgba(0,0,0,.2);
   max-width:90%;
-  animation:fadeUp .6s ease;
+  animation:fadeUp .7s ease;
+}
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:38px;
 }
 
 @keyframes fadeUp{
@@ -50,13 +57,12 @@ button{
   padding:14px 28px;
   border:none;
   border-radius:30px;
-  font-size:18px;
-  background:#ff4fa3;
+  font-size:16px;
+  background:#ff5ca2;
   color:#fff;
   cursor:pointer;
   animation:pulse 1.2s infinite;
 }
-
 @keyframes pulse{
   50%{transform:scale(1.08)}
 }
@@ -67,12 +73,11 @@ button{
   flex-wrap:wrap;
   justify-content:center;
 }
-
 .gallery img{
-  width:120px;
-  height:120px;
+  width:110px;
+  height:110px;
   object-fit:cover;
-  border-radius:20px;
+  border-radius:15px;
   cursor:pointer;
   transition:.3s;
 }
@@ -88,7 +93,6 @@ button{
   display:flex;
   justify-content:center;
   align-items:center;
-  z-index:999;
 }
 .fullscreen img{
   max-width:90%;
@@ -97,7 +101,7 @@ button{
 }
 
 .bear{
-  font-size:120px;
+  font-size:100px;
   animation:hug 1s infinite alternate;
 }
 @keyframes hug{
@@ -107,7 +111,7 @@ button{
 
 .float{
   position:absolute;
-  font-size:30px;
+  font-size:28px;
   animation:fall linear infinite;
   top:-50px;
 }
@@ -124,61 +128,59 @@ button{
 
 <body>
 
-<!-- floating icons -->
-<div class='float f1'>💖</div>
-<div class='float f2'>✨</div>
-<div class='float f3'>🌸</div>
-<div class='float f4'>🎀</div>
+<!-- floating -->
+<div class="float f1">💖</div>
+<div class="float f2">✨</div>
+<div class="float f3">🌸</div>
+<div class="float f4">🫶</div>
 
-<!-- music -->
-<audio id="music" controls loop>
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b7b65.mp3">
+<!-- AUDIO (WORKING) -->
+<audio id="music" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
 </audio>
 
-<!-- screen 1 -->
-<div id='s1' class='screen show'>
-  <div class='card'>
-    <h1>Hi Mummy 💖</h1>
-    <h2>Good Morning ☀️</h2>
-    <p>You are not just my mummy… you are my kucho billa my safe place, my comfort, my everything.i love u mummy</p>
-    <button onclick='startExperience()'>Click Me ✨</button>
+<!-- SCREEN 1 -->
+<div id="s1" class="screen show">
+  <div class="card">
+    <h1>Hi Mummyy 💕</h1>
+    <p>Good Morning ☀️<br>You are my heart, my comfort, my everything. I love you more than anything mera billa🥰🫶</p>
+    <button onclick="startExperience()">Start 💖</button>
   </div>
 </div>
 
-<!-- screen 2 -->
-<div id='s2' class='screen'>
-  <div class='card'>
-    <h1>Special Message 💌</h1>
+<!-- SCREEN 2 -->
+<div id="s2" class="screen">
+  <div class="card">
+    <h1>A little message 💌</h1>
     <p>
-      Thank you for every little thing you’ve done for me…  
-      even the things I never noticed. you are very strong and intelligent
-      Your love is the reason I feel strong every day. I will love you and be by ur side forever
+      Thank you for every hug, every sacrifice, every smile 🌸<br>
+      You make my world feel safe and full of love. you are the strongest ans kindest person I know. 💖
     </p>
-    <button onclick='next(2,3)'>One More Surprise 🎁</button>
+    <button onclick="next(2,3)">See memories 📸</button>
   </div>
 </div>
 
-<!-- screen 3 -->
-<div id='s3' class='screen'>
-  <div class='card'>
-    <h1>Our Memories 📸</h1>
-    <div class='gallery'>
-      <img src='https://i.imgur.com/L6jW0Nz.jpeg' onclick="openImg(this.src)">
-      <img src='https://i.imgur.com/p0g9ObI.jpeg' onclick="openImg(this.src)">
-      <img src='https://i.imgur.com/MeS70Vd.jpeg' onclick="openImg(this.src)">
-      <img src='https://i.imgur.com/tssgDo2.jpeg' onclick="openImg(this.src)">
+<!-- SCREEN 3 -->
+<div id="s3" class="screen">
+  <div class="card">
+    <h1>Our Memories ✨</h1>
+    <div class="gallery">
+      <img src="https://i.imgur.com/L6jW0Nz.jpeg" onclick="openImg(this.src)">
+      <img src="https://i.imgur.com/p0g9ObI.jpeg" onclick="openImg(this.src)">
+      <img src="https://i.imgur.com/MeS70Vd.jpeg" onclick="openImg(this.src)">
+      <img src="https://i.imgur.com/tssgDo2.jpeg" onclick="openImg(this.src)">
     </div>
-    <p>I love every memory with you. my most gorgeous,beautiful,smart, intelligent mummy❤️</p>
-    <button onclick='next(3,4)'>Last Click 🧸</button>
+    <p>Every moment spent with you is precious ❤️</p>
+    <button onclick="next(3,4)">Last surprise 🎁</button>
   </div>
 </div>
 
-<!-- screen 4 -->
-<div id='s4' class='screen'>
-  <div class='card'>
-    <div class='bear'>🧸🤗</div>
-    <h1>Biggest Hug For my Mummy!</h1>
-    <p>I will always love you… no matter what 💖</p>
+<!-- SCREEN 4 -->
+<div id="s4" class="screen">
+  <div class="card">
+    <div class="bear">🧸💞</div>
+    <h1>Biggest Hug 🤗</h1>
+    <p>I love you forever, Mommy..bhalu dekho💖</p>
   </div>
 </div>
 
@@ -186,12 +188,13 @@ button{
 function next(a,b){
   document.getElementById('s'+a).classList.remove('show');
   setTimeout(()=>{
-    document.getElementById('s'+b).classList.add('show')
-  },300)
+    document.getElementById('s'+b).classList.add('show');
+  },300);
 }
 
 function startExperience(){
-  document.getElementById('music').play();
+  let music = document.getElementById("music");
+  music.play().catch(()=>{});
   next(1,2);
 }
 
