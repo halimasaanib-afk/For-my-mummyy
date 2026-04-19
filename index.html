@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mommy 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  overflow:hidden;
+  background:linear-gradient(45deg,#ff9ad5,#ffd166,#9bf6ff,#caffbf);
+  background-size:400% 400%;
+  animation:bg 10s ease infinite;
+}
+@keyframes bg{
+  0%{background-position:0 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0 50%}
+}
+
+.screen{
+  display:none;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+}
+.show{display:flex}
+
+.card{
+  background:rgba(255,255,255,.8);
+  padding:25px;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  max-width:90%;
+  animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+button{
+  margin-top:20px;
+  padding:14px 28px;
+  border:none;
+  border-radius:30px;
+  font-size:18px;
+  background:#ff4fa3;
+  color:#fff;
+  cursor:pointer;
+  animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.08)}
+}
+
+.gallery{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.gallery img{
+  width:120px;
+  height:120px;
+  object-fit:cover;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.3s;
+}
+.gallery img:hover{transform:scale(1.1)}
+
+.fullscreen{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+.fullscreen img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:20px;
+}
+
+.bear{
+  font-size:120px;
+  animation:hug 1s infinite alternate;
+}
+@keyframes hug{
+  from{transform:scale(1)}
+  to{transform:scale(1.12)}
+}
+
+.float{
+  position:absolute;
+  font-size:30px;
+  animation:fall linear infinite;
+  top:-50px;
+}
+.f1{left:10%;animation-duration:7s}
+.f2{left:40%;animation-duration:9s}
+.f3{left:75%;animation-duration:8s}
+.f4{left:55%;animation-duration:6s}
+
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- floating icons -->
+<div class='float f1'>💖</div>
+<div class='float f2'>✨</div>
+<div class='float f3'>🌸</div>
+<div class='float f4'>🎀</div>
+
+<!-- music -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b7b65.mp3">
+</audio>
+
+<!-- screen 1 -->
+<div id='s1' class='screen show'>
+  <div class='card'>
+    <h1>Hi Mommy 💖</h1>
+    <h2>Good Morning ☀️</h2>
+    <p>You are not just my mom… you are my safe place, my comfort, my everything.</p>
+    <button onclick='startExperience()'>Click Me ✨</button>
+  </div>
+</div>
+
+<!-- screen 2 -->
+<div id='s2' class='screen'>
+  <div class='card'>
+    <h1>Special Message 💌</h1>
+    <p>
+      Thank you for every little thing you’ve done for me…  
+      even the things I never noticed.  
+      Your love is the reason I feel strong every day.  
+    </p>
+    <button onclick='next(2,3)'>One More Surprise 🎁</button>
+  </div>
+</div>
+
+<!-- screen 3 -->
+<div id='s3' class='screen'>
+  <div class='card'>
+    <h1>Our Memories 📸</h1>
+    <div class='gallery'>
+      <img src='https://i.imgur.com/L6jW0Nz.jpeg' onclick="openImg(this.src)">
+      <img src='https://i.imgur.com/p0g9ObI.jpeg' onclick="openImg(this.src)">
+      <img src='https://i.imgur.com/MeS70Vd.jpeg' onclick="openImg(this.src)">
+      <img src='https://i.imgur.com/tssgDo2.jpeg' onclick="openImg(this.src)">
+    </div>
+    <p>I love every memory with you ❤️</p>
+    <button onclick='next(3,4)'>Last Click 🧸</button>
+  </div>
+</div>
+
+<!-- screen 4 -->
+<div id='s4' class='screen'>
+  <div class='card'>
+    <div class='bear'>🧸🤗</div>
+    <h1>Biggest Hug For Mommy!</h1>
+    <p>I will always love you… no matter what 💖</p>
+  </div>
+</div>
+
+<script>
+function next(a,b){
+  document.getElementById('s'+a).classList.remove('show');
+  setTimeout(()=>{
+    document.getElementById('s'+b).classList.add('show')
+  },300)
+}
+
+function startExperience(){
+  document.getElementById('music').play();
+  next(1,2);
+}
+
+function openImg(src){
+  let div = document.createElement("div");
+  div.className="fullscreen";
+  div.onclick=()=>div.remove();
+
+  let img = document.createElement("img");
+  img.src=src;
+
+  div.appendChild(img);
+  document.body.appendChild(div);
+}
+</script>
+
+</body>
+</html>
