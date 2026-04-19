@@ -3,19 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For my Mummy 💖</title>
+<title>For Mummy 💖</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  overflow:hidden;
-  background:linear-gradient(45deg,#ffafcc,#ffc8dd,#cdb4db,#a2d2ff);
+  background:linear-gradient(45deg,#ffd6e0,#e7c6ff,#cdb4db,#bde0fe);
   background-size:400% 400%;
-  animation:bg 10s ease infinite;
+  animation:bg 12s ease infinite;
+  overflow:hidden;
 }
 @keyframes bg{
   0%{background-position:0 50%}
@@ -35,21 +34,17 @@ body{
 .show{display:flex}
 
 .card{
-  background:rgba(255,255,255,.85);
+  background:rgba(255,255,255,0.85);
   padding:25px;
   border-radius:25px;
   box-shadow:0 10px 30px rgba(0,0,0,.2);
   max-width:90%;
   animation:fadeUp .7s ease;
 }
+
 h1{
   font-family:'Great Vibes',cursive;
-  font-size:38px;
-}
-
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px)}
-  to{opacity:1; transform:translateY(0)}
+  font-size:40px;
 }
 
 button{
@@ -57,130 +52,103 @@ button{
   padding:14px 28px;
   border:none;
   border-radius:30px;
-  font-size:16px;
-  background:#ff5ca2;
+  background:#ff6fa5;
   color:#fff;
+  font-size:16px;
   cursor:pointer;
-  animation:pulse 1.2s infinite;
-}
-@keyframes pulse{
-  50%{transform:scale(1.08)}
 }
 
 .gallery{
   display:flex;
-  gap:10px;
   flex-wrap:wrap;
+  gap:12px;
   justify-content:center;
 }
 .gallery img{
-  width:110px;
-  height:110px;
+  width:120px;
+  height:120px;
   object-fit:cover;
   border-radius:15px;
-  cursor:pointer;
-  transition:.3s;
-}
-.gallery img:hover{transform:scale(1.1)}
-
-.fullscreen{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.9);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.fullscreen img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:20px;
 }
 
 .bear{
-  font-size:100px;
+  font-size:120px;
   animation:hug 1s infinite alternate;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
 }
 @keyframes hug{
   from{transform:scale(1)}
-  to{transform:scale(1.12)}
-}
-
-.float{
-  position:absolute;
-  font-size:28px;
-  animation:fall linear infinite;
-  top:-50px;
-}
-.f1{left:10%;animation-duration:7s}
-.f2{left:40%;animation-duration:9s}
-.f3{left:75%;animation-duration:8s}
-.f4{left:55%;animation-duration:6s}
-
-@keyframes fall{
-  to{transform:translateY(110vh) rotate(360deg)}
+  to{transform:scale(1.15)}
 }
 </style>
 </head>
 
 <body>
 
-<!-- floating -->
-<div class="float f1">💖</div>
-<div class="float f2">✨</div>
-<div class="float f3">🌸</div>
-<div class="float f4">🫶</div>
-
-<!-- AUDIO (WORKING) -->
 <audio id="music" loop>
-  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/audio/2022/02/23/audio_d1718a3c0c.mp3" type="audio/mpeg">
 </audio>
 
 <!-- SCREEN 1 -->
 <div id="s1" class="screen show">
   <div class="card">
-    <h1>Hi Mummyy 💕</h1>
-    <p>Good Morning ☀️<br>You are my heart, my comfort, my everything. I love you more than anything mera billa🥰🫶</p>
-    <button onclick="startExperience()">Start 💖</button>
+    <h1>Good Morning Mummy ☀️</h1>
+    <p>
+      I love you 💖<br>
+      You are the most beautiful woman in the world 🌸<br>
+      This is my small token of love for u🫶
+    </p>
+    <button onclick="start()">Click Here ✨</button>
   </div>
 </div>
 
 <!-- SCREEN 2 -->
 <div id="s2" class="screen">
   <div class="card">
-    <h1>A little message 💌</h1>
-    <p>
-      Thank you for every hug, every sacrifice, every smile 🌸<br>
-      You make my world feel safe and full of love. you are the strongest ans kindest person I know. 💖
+    <h1>For my dearest Mummy 💌</h1>
+    <p style="line-height:1.6">
+      I love you the most.<br><br>
+      Thank you for always being there and trying to understand me when I myself couldn't understand me.<br><br>
+      I love the time spent with you. I love every moment that we share together.<br><br>
+      You are the strongest, smartest, beautiful woman I know, and I will always stand by your side.<br><br>
+      I know I should appreciate you more, and I will try to be a good daughter, but you are the best mom ever 💖
     </p>
-    <button onclick="next(2,3)">See memories 📸</button>
+    <button onclick="next(2,3)">Unlock our memories 📸</button>
   </div>
 </div>
 
-<!-- SCREEN 3 -->
+<!-- SCREEN 3 (ONLY 4 IMAGES) -->
 <div id="s3" class="screen">
   <div class="card">
     <h1>Our Memories ✨</h1>
     <div class="gallery">
-      <img src="https://i.imgur.com/L6jW0Nz.jpeg" onclick="openImg(this.src)">
-      <img src="https://i.imgur.com/p0g9ObI.jpeg" onclick="openImg(this.src)">
-      <img src="https://i.imgur.com/MeS70Vd.jpeg" onclick="openImg(this.src)">
-      <img src="https://i.imgur.com/tssgDo2.jpeg" onclick="openImg(this.src)">
+      <img src="https://i.imgur.com/L6jW0Nz.jpeg">
+      <img src="https://i.imgur.com/p0g9ObI.jpeg">
+      <img src="https://i.imgur.com/MeS70Vd.jpeg">
+      <img src="https://i.imgur.com/tssgDo2.jpeg">
     </div>
-    <p>Every moment spent with you is precious ❤️</p>
-    <button onclick="next(3,4)">Last surprise 🎁</button>
+    <p>
+      The best time I spent with you 💖<br>
+      Each memory holds so much love and warmth 🌸
+    </p>
+    <button onclick="next(3,4)">Last Click 🧸</button>
   </div>
 </div>
 
 <!-- SCREEN 4 -->
 <div id="s4" class="screen">
   <div class="card">
-    <div class="bear">🧸💞</div>
-    <h1>Biggest Hug 🤗</h1>
-    <p>I love you forever, Mommy..bhalu dekho💖</p>
+    <div class="bear">🧸🤗</div>
+    <p>
+      Dekho bhalu ka bacha inne 🥺💖<br><br>
+      Thank you so much for being there for me.<br>
+      I love you forever and I will always be by your side.<br><br>
+      Mera kucho billa 💞
+    </p>
   </div>
 </div>
 
@@ -192,24 +160,13 @@ function next(a,b){
   },300);
 }
 
-function startExperience(){
-  let music = document.getElementById("music");
+function start(){
+  let music=document.getElementById("music");
   music.play().catch(()=>{});
   next(1,2);
-}
-
-function openImg(src){
-  let div = document.createElement("div");
-  div.className="fullscreen";
-  div.onclick=()=>div.remove();
-
-  let img = document.createElement("img");
-  img.src=src;
-
-  div.appendChild(img);
-  document.body.appendChild(div);
 }
 </script>
 
 </body>
 </html>
+  
